@@ -14,7 +14,7 @@ export const notFoundError = (
   next(error);
 };
 
-const generalError = (
+export const generalError = (
   error: CustomError,
   req: Request,
   res: Response,
@@ -22,5 +22,5 @@ const generalError = (
 ) => {
   res
     .status(error.statusCode || 500)
-    .json({ error: error.publicMessage || "Custom message" });
+    .json({ error: error.publicMessage || "Something failed" });
 };
