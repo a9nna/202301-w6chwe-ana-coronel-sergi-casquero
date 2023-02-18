@@ -14,6 +14,7 @@ export const startServer = async (port: number) =>
 
     server.on("error", (error: CustomError) => {
       let errorMessage = "Error on starting the server. ";
+
       if (error.code === "EADDRINUSE") {
         errorMessage += `The port ${port} is already in use`;
       }

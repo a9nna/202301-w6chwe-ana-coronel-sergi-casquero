@@ -6,7 +6,7 @@ class CustomError extends Error {
     public statusCode: number,
     public publicMessage: string
   ) {
-    super();
+    super(message);
   }
 }
 
