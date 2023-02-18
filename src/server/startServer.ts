@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import createDebug from "debug";
-import app from ".";
+import app from "./index.js";
 import type CustomError from "./CustomError";
 
 const debug = createDebug("server");
