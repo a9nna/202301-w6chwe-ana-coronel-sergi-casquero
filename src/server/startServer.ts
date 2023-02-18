@@ -13,8 +13,11 @@ export const startServer = async (port: number) =>
     });
 
     server.on("error", (error: CustomError) => {
+      let errorMessage = "Error on starting the server. ";
       if (error.code === "EADDRINUSE") {
-        debug(chalk.bgRed("Server is already used, please use another one"));
+        errorMessage += `The port ${port} is already in use`;
       }
+
+      reject(new Error(errorMessage));
     });
   });

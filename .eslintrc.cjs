@@ -2,6 +2,7 @@ module.exports = {
   env: {
     es2021: true,
     node: true,
+    jest: true,
   },
   extends: ["xo", "prettier"],
   overrides: [
@@ -13,6 +14,12 @@ module.exports = {
           "error",
           "interface",
         ],
+      },
+    },
+    {
+      files: ["src/**/models/**/*.ts"],
+      rules: {
+        "@typescript-eslint/naming-convention": "off",
       },
     },
   ],

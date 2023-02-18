@@ -10,7 +10,6 @@ const robotsSchema = new Schema({
   },
 });
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
 const Robot = model("Robot", robotsSchema, "robots");
 
 export default Robot;
