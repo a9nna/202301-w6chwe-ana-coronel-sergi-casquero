@@ -5,14 +5,16 @@ import type CustomError from "./CustomError";
 
 const debug = createDebug("server");
 
-export const startServer = (port: number) => {
-  const server = app.listen(port, () => {
-    debug(chalk.bgGreen(`Start with server 'http://localhost${port}'`));
-  });
+export const startServer = async (port: number) =>
+  new Promise((resolve, reject) => {
+    const server = app.listen(port, () => {
+      debug(chalk.bgGreen(`Start with server 'http://localhost${port}'`));
+      resolve(server);
+    });
 
-  server.on("error", (error: CustomError) => {
-    if (error.code === "EADDRINUSE") {
-      debug(chalk.bgRed("Server is already used, please use another one"));
-    }
+    server.on("error", (error: CustomError) => {
+      if (error.code === "EADDRINUSE") {
+        debug(chalk.bgRed("Server is already used, please use another one"));
+      }
+    });
   });
-};
