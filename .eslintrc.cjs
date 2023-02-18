@@ -13,7 +13,6 @@ module.exports = {
           "error",
           "interface",
         ],
-        "@typescript-eslint/naming-convention": "off",
       },
     },
   ],

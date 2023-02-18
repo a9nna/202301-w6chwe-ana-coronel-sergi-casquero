@@ -41,5 +41,15 @@
     "lint-staged": "^13.1.2",
     "mongoose": "^6.9.2",
     "morgan": "^1.10.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "!src/index.tsx",
+      "!src/react-app-env.d.ts",
+      "!src/server/startServer.ts",
+      "!src/database/connectDatabase.ts"
+    ]
   }
 }
