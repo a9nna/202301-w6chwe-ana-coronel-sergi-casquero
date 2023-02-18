@@ -1,5 +1,5 @@
 import { type NextFunction, type Response, type Request } from "express";
-import CustomError from "../CustomError";
+import CustomError from "../CustomError.js";
 
 export const notFoundError = (
   req: Request,
