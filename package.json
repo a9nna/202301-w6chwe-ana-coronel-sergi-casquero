@@ -39,6 +39,7 @@
     "express": "^4.18.2",
     "inquirer": "^9.1.4",
     "lint-staged": "^13.1.2",
+    "mongoose": "^6.9.2",
     "morgan": "^1.10.0"
   }
 }
