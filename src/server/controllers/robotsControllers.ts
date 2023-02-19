@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { type NextFunction, type Request, type Response } from "express";
 import Robot from "../../database/models/Robot.js";
 import CustomError from "../CustomError.js";
