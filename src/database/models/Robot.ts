@@ -10,6 +10,12 @@ const robotsSchema = new Schema({
   },
 });
 
+robotsSchema.virtual("id").get(function () {
+  return this._id;
+});
+
+robotsSchema.set("toJSON", { virtuals: true });
+
 const Robot = model("Robot", robotsSchema, "robots");
 
 export default Robot;
