@@ -19,3 +19,23 @@ export const getRobots = async (
     next(customError);
   }
 };
+
+export const getRobotById = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { idRobot } = req.params;
+
+  try {
+    const robot = await Robot.findById(idRobot).exec();
+
+    res.status(200).json({ robot });
+
+    if (!robot) {
+      res.status(404).json({ error: "Robot not found" });
+    }
+  } catch (error) {
+    next(new CustomError(error.message, 500, "Couldn't retrieve the robot"));
+  }
+};
