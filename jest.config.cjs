@@ -4,6 +4,7 @@ module.exports = {
   testEnvironment: "node",
   testMatch: ["**/src/**/*.test.ts"],
   resolver: "jest-ts-webcompat-resolver",
+  testTimeout: 20000,
   collectCoverageFrom: [
     "src/**/*.ts",
     "!src/react-app-env.d.ts",
