@@ -4,10 +4,10 @@ import { getRobotById, getRobots } from "./robotsControllers";
 
 describe("Given the getRobots function", () => {
   describe("When it receives a res object", () => {
-    test("Then it should call its 'status' method with 200", async () => {
+    test("Then it should call its status method with 200", async () => {
       const req = {} as Request;
       const res = { status: jest.fn() } as Partial<Response>;
-      const next = jest.fn();
+      const next = () => ({});
       const statusCode = 200;
 
       Robot.find = jest.fn().mockImplementationOnce(() => ({
@@ -32,11 +32,11 @@ describe("Given the getRobots function", () => {
 
 describe("Given the getRobotById function", () => {
   describe("When it receives a request with idRobot '63f0bf28ec1efcc93e942727' in the query parameters", () => {
-    test("Then it should call its 'status' method with 200", async () => {
+    test("Then it should call its status method with 200", async () => {
       const idRobot = "63f0bf28ec1efcc93e942727";
       const req = { params: idRobot } as unknown;
       const res = { status: jest.fn() } as Partial<Response>;
-      const next = jest.fn();
+      const next = () => ({});
       const statusCode = 200;
 
       Robot.findById = jest.fn().mockImplementationOnce(() => ({
