@@ -1,5 +1,8 @@
 import { type NextFunction, type Response, type Request } from "express";
 import CustomError from "../CustomError.js";
+import createDebug from "debug";
+
+const debug = createDebug("server:middleware:auth");
 
 export const notFoundError = (
   req: Request,
@@ -20,6 +23,8 @@ export const generalError = (
   res: Response,
   next: NextFunction
 ) => {
+  debug(error.message);
+
   res
     .status(error.statusCode || 500)
     .json({ error: error.publicMessage || "Something failed" });
