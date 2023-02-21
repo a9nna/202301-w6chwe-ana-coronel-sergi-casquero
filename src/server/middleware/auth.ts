@@ -27,7 +27,7 @@ const auth = (req: Request, res: Response, next: NextFunction) => {
 
   const token = req.header("Authorization")?.replace(/^Bearer /, "");
 
-  const payload = jwt.verify(token!, process.env.SECRET_KEY!);
+  jwt.verify(token!, process.env.SECRET_KEY!);
 };
 
 export default auth;
